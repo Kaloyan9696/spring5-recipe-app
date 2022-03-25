@@ -1,6 +1,7 @@
 package guru.springframework.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -9,10 +10,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-    private String name;
+    private String description;
 
     @ManyToMany(mappedBy = "category")
-    private Set<Recipe> recipe;
+    private Set<Recipe> recipe = new HashSet<>();
 
     public Set<Recipe> getRecipe() {
         return recipe;
@@ -30,11 +31,11 @@ public class Category {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String name) {
+        this.description = name;
     }
 }
