@@ -20,16 +20,16 @@ import java.util.Optional;
 @Slf4j
 @Controller
 public class IndexController {
-//
-//    private CategoryRepo categoryRepo;
-//    private UnitOfMeasurementRepo unitOfMeasurementRepo;
+
+    private CategoryRepo categoryRepo;
+    private UnitOfMeasurementRepo unitOfMeasurementRepo;
     private RecipeService recipeService;
 
-//    public IndexController(CategoryRepo categoryRepo, UnitOfMeasurementRepo unitOfMeasurementRepo) {
-//        log.debug("I'm in Index controller");
-//        this.categoryRepo = categoryRepo;
-//        this.unitOfMeasurementRepo = unitOfMeasurementRepo;
-//    }
+    public IndexController(CategoryRepo categoryRepo, UnitOfMeasurementRepo unitOfMeasurementRepo) {
+        log.debug("I'm in Index controller");
+        this.categoryRepo = categoryRepo;
+        this.unitOfMeasurementRepo = unitOfMeasurementRepo;
+    }
 
     public IndexController(RecipeService recipeService) {
         this.recipeService = recipeService;
