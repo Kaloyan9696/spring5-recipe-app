@@ -1,10 +1,15 @@
 package guru.springframework.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@EqualsAndHashCode(exclude = {"recipes"})
+@Data
 public class Category {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,29 +18,11 @@ public class Category {
     private String description;
 
     @ManyToMany(mappedBy = "category")
-    private Set<Recipe> recipe = new HashSet<>();
+    private Set<Recipe> recipes = new HashSet<>();
 
-    public Set<Recipe> getRecipe() {
-        return recipe;
+    public Set<Recipe> getRecipes() {
+        return recipes;
     }
 
-    public void setRecipe(Set<Recipe> recipe) {
-        this.recipe = recipe;
-    }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String name) {
-        this.description = name;
-    }
 }
