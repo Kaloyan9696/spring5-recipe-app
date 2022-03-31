@@ -143,6 +143,10 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
         guacRecipe.getCategory().add(americanCategory);
         guacRecipe.getCategory().add(mexicanCategory);
+        guacRecipe.setUrl("http:/www.simplyrecipes.com/recipes/perfect_guacamole/");
+        guacRecipe.setServings(4);
+        guacRecipe.setSource("Simply Recipe");
+
 
         //add to return list
         recipes.add(guacRecipe);
